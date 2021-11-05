@@ -1,23 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 function Viewers() {
+    let viewersName = ['disney', 'marvel', 'national', 'starwars', 'pixar'];
     return (
         <Container>
-            <Wrap>
-                <img src="images/viewers-disney.png"/>
-            </Wrap>
-            <Wrap>
-                <img src="images/viewers-marvel.png"/>
-            </Wrap>
-            <Wrap>
-                <img src="images/viewers-national.png"/>
-            </Wrap>
-            <Wrap>
-                <img src="images/viewers-pixar.png"/>
-            </Wrap>
-            <Wrap>
-                <img src="images/viewers-starwars.png"/>
-            </Wrap>
+            {
+                viewersName.map(v => (
+                    <Wrap>
+                        <img src={`images/viewers-${v}.png`}/>
+                    </Wrap>         
+                ))
+            }
         </Container>
     )
 }

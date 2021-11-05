@@ -12,31 +12,18 @@ const ImgSlider = (props) => {
     slidesToScroll: 1,
     autoplay: true,
   };
+  const imageSliders = ['badging', 'scale', 'badag', 'scales'];
   return (
     <Carousel {...settings}>
-      <Wrap>
-        <a>
-          <img src="/images/slider-badging.jpg" alt="" />
-        </a>
-      </Wrap>
-
-      <Wrap>
-        <a>
-          <img src="/images/slider-scale.jpg" alt="" />
-        </a>
-      </Wrap>
-
-      <Wrap>
-        <a>
-          <img src="/images/slider-badag.jpg" alt="" />
-        </a>
-      </Wrap>
-
-      <Wrap>
-        <a>
-          <img src="/images/slider-scales.jpg" alt="" />
-        </a>
-      </Wrap>
+        {
+            imageSliders.map(i => (
+                <Wrap>
+                    <a>
+                    <img src={`/images/slider-${i}.jpg`} alt="" />
+                    </a>
+                </Wrap> 
+            ))
+        }
     </Carousel>
   );
 };
